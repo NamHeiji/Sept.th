@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gửi sept.th nhé!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Landing Page -->
+    <div id="landingPage" class="landing-page">
+      <div class="landing-content">
+        <button class="start-btn" onclick="showQuestion()">
+          <span>💌</span>
+          Bắt đầu nào!
+        </button>
+      </div>
+      <div class="floating-hearts"></div>
+    </div>
+
+    <!-- Main Question -->
+    <div id="questionPage" class="question-page hidden">
+      <div class="question-container">
+        <div class="question-header">
+          <!-- <h2>💭 Câu hỏi dành cho em</h2> -->
+        </div>
+
+        <div class="question-content">
+          <div class="question-card">
+            <div class="question-text">
+              <h3>Hi vọng chủ nhật này em không bận? 🌸</h3>
+              <p>Anh biết một vài chỗ hay ho lắm đó! 😊</p>
+            </div>
+
+            <div class="answer-buttons">
+              <button class="yes-btn" onclick="selectAnswer('yes')">
+                <span>💕</span>
+                Có nè!
+              </button>
+              <button class="no-btn" id="noBtn" onclick="selectAnswer('no')">
+                <span>😔</span>
+                Không...
+              </button>
+            </div>
+
+            <!-- Sad Response Area -->
+            <div id="sadResponse" class="sad-response hidden">
+              <div class="sad-emoji">😢</div>
+              <div id="sadMessage" class="sad-message"></div>
+              <button class="try-again-btn" onclick="tryAgain()">
+                Hỏi lại nè! 🥺
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rain Effect for Sad Response -->
+      <div id="rainContainer" class="rain-container hidden"></div>
+    </div>
+
+    <!-- Success Page -->
+    <div id="successPage" class="success-page hidden">
+      <div class="success-container">
+        <div class="celebration-header">
+          <h2>🎉 Yayyy! Em đồng ý rồi!</h2>
+        </div>
+
+        <div class="suggestions-grid">
+          <div class="suggestion-card" onclick="selectPlace('cafe')">
+            <div class="suggestion-icon">☕</div>
+            <h4>Cafe Chill</h4>
+          </div>
+
+          <div class="suggestion-card" onclick="selectPlace('cinema')">
+            <div class="suggestion-icon">🎬</div>
+            <h4>Aeon mail xem phim + ăn gì đó</h4>
+          </div>
+
+          <div class="suggestion-card" onclick="selectPlace('park')">
+            <div class="suggestion-icon">🌳</div>
+            <h4>Lên bờ hồ đi dạo</h4>
+          </div>
+        </div>
+
+        <div class="time-selection">
+          <h3>Em rảnh lúc nào? ⏰</h3>
+          <div class="time-buttons">
+            <button class="time-btn" onclick="selectTime('morning')">
+              Sáng
+            </button>
+            <button class="time-btn" onclick="selectTime('afternoon')">
+              Chiều
+            </button>
+            <button class="time-btn" onclick="selectTime('evening')">
+              Tối
+            </button>
+            <button class="time-btn" onclick="selectTime('allday')">
+              Cả ngày
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Confetti Effect -->
+      <div id="confettiContainer" class="confetti-container"></div>
+    </div>
+
+    <!-- Final Confirmation -->
+    <div id="finalPage" class="final-page hidden">
+      <div class="final-container">
+        <div class="final-header">
+          <h2>💕 Hoàn tất!</h2>
+          <div id="finalDetails" class="final-details"></div>
+        </div>
+
+        <div class="cute-message">
+          <p>Nhắn lại cho anh nhé, chứ a ko biết e chọn gì đâu kk! 🥰</p>
+          <div class="countdown" id="countdown"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
